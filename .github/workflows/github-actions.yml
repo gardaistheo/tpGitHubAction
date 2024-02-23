@@ -20,4 +20,4 @@ jobs:
       run: pylint SimpleMath.py
 
     - name: Exécuter les tests
-      run: python -m unittest --fail-under=4 SimpleMath.py
+      run: python -m unittest --fail-under=4 SimpleMath.py #ajout de pylint

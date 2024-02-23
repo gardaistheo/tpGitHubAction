@@ -1,0 +1,9 @@
+name: GitHub Actions Test Simple Math
+run-name: ${{ github.actor }} is testing the SimpleMath.py file.
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: python ../SimpleMath.py.py > output.txt
+      - run: cat output.txt

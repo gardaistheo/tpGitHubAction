@@ -59,3 +59,16 @@ Voici le résultat :
 ## 5 - Ajouter la fonction soustraction
 Après le push les test on automatiquements été effectué :
 ![resultAddictionSoustraction](./img/resultSoustractionAddiction.png)
+## 6 - Intégrer Pylint pour le lint
+Pour rajouter pylint à notre pipeline il faut tout d'abord l'installer on ajoute donc ces lignes : 
+```yml
+    - name: Dependancies Install
+      run: pip install pylint
+```
+Ensuite on peut lancer une commande avec pylint :
+```yml
+    - name: Lint avec pylint
+      run: pylint --fail-under=4 SimpleMath.py #ajout de pylint
+```
+Résultat:
+![resultPylint](./img/resultPylint.png)

@@ -1,6 +1,17 @@
 name: Python Tests
 on: [push]
 jobs:
+  build_and_test_docker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v2
+
+    - name: Build du conteneur Docker
+      run: docker build .
+
+    - name: Exécuter les tests avec le conteneur Docker
+      run: docker run .
   test:
     runs-on: ubuntu-latest
     steps:

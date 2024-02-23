@@ -2,7 +2,7 @@ name: Python Tests
 on: [push]
 jobs:
   test:
-    runs-on: ubuntu-latest  # Utilisation de l'image Ubuntu
+    runs-on: ubuntu-latest
     steps:
     
     - name: Setup Python

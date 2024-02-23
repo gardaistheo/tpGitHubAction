@@ -33,5 +33,26 @@ class TestSimpleMath(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
 ```
+## 4 - Ajouter le fichier python SimpleMath au repo et lancer les test via GitHub Action 
+Après avoir suivis les instruction du TestGit Hub Action voici le fichier github-action.yml permettant de tester le fichier python : 
+```yml
+name: Python Tests
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.10
+
+    - name: Exécuter les tests
+      run: python -m unittest discover -s . -p '../SimpleMath.py'
+```
+Pour permettre le test il faut d'abord Setup python pour pouvoir executer unittest qui est présent dans le fichier.
+
+Voici le résultat : 
+![resultTest](./img/resultTest.png)

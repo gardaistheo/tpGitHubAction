@@ -8,10 +8,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build du conteneur Docker
-      run: docker build .
+      run: docker build -t testDocker .
 
     - name: Exécuter les tests avec le conteneur Docker
-      run: docker run .
+      run: docker run testDocker
   test:
     runs-on: ubuntu-latest
     steps:

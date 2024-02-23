@@ -13,7 +13,7 @@ class TestSimpleMath(unittest.TestCase):
         result = SimpleMath.addition(3, 5)
         self.assertEqual(result, 8, "La fonction addition ne retourne pas le résultat attendu")
     def test_soustraction(self):
-        result = SimpleMath.soustraction(3, 5)
+        result = SimpleMath.soustraction(5, 3)
         self.assertEqual(result, 2, "La fonction soustraction ne retourne pas le résultat attendu")
 
 if __name__ == "__main__":

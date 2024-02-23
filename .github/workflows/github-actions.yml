@@ -17,7 +17,7 @@ jobs:
       run: pip install pylint
 
     - name: Lint avec pylint
-      run: pylint SimpleMath.py
+      run: pylint --fail-under=4 SimpleMath.py #ajout de pylint
 
     - name: Exécuter les tests
-      run: python -m unittest --fail-under=4 SimpleMath.py #ajout de pylint
+      run: python -m unittest SimpleMath.py

@@ -56,3 +56,6 @@ Pour permettre le test il faut d'abord Setup python pour pouvoir executer unitte
 
 Voici le résultat : 
 ![resultTest](./img/resultTest.png)
+## 5 - Ajouter la fonction soustraction
+Après le push les test on automatiquements été effectué :
+![resultAddictionSoustraction](./img/resultSoustractionAddiction.png)

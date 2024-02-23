@@ -72,3 +72,28 @@ Ensuite on peut lancer une commande avec pylint :
 ```
 Résultat:
 ![resultPylint](./img/resultPylint.png)
+## 7 - Executer les test sur un conteneur docker
+Pour cela il faut construit le dockerfile pour configurer notre conteneur : 
+```dockerfile
+FROM python:3.10.10
+WORKDIR /app
+COPY SimpleMath.py .
+RUN pip install pylint
+CMD ["python", "-m", "unittest", "SimpleMath.py"]
+```
+Ensuite j'ajoute un nouveau job a mon github-actions.yml :
+```yml
+build_and_test_docker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v2
+
+    - name: Build du conteneur Docker
+      run: docker build -t testdocker .
+
+    - name: Exécuter les tests avec le conteneur Docker
+      run: docker run testdocker
+```
+Voici le résultat :
+![resultTestDocker](./img/resultTestDocker.png)
